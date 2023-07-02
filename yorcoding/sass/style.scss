@@ -1,0 +1,564 @@
+@charset "utf-8";
+@use "reset";
+@use "responsive" as *;
+@use "_hanbergermenu" as *;
+
+/* 汎用クラス */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #333333;
+}
+
+.inner {
+    max-width: 1022px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    margin-top: 95px;
+    overflow: hidden;
+    position: relative;
+}
+
+.section-title {
+    font-size: 32px;
+    line-height: 1.34375;
+    text-align: center;
+    margin-bottom: 13px;
+}
+
+.section-title-en {
+    text-align: center;
+    font-size: 16px;
+    color: #3BA6C9;
+    font-weight: bold;
+    margin-bottom: 60px;
+
+}
+
+.section-title-ja {
+    text-align: center;
+    font-size: 16px;
+    color: #3BA6C9;
+    font-weight: bold;
+    margin-bottom: 60px;
+
+}
+
+.section-title-h2 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title-h3 {
+    font-size: 24px;
+    line-height: 2;
+    margin-bottom: 48px;
+}
+
+.service-text {
+    font-weight: bold;
+    line-height: 1.625;
+
+}
+
+.hanberger-menu {
+    display: none;
+
+    @include responsive(sm) {
+        display: block;
+    }
+}
+
+// swiper
+
+.swiper {
+    width: 100%;
+    // height: 600px;
+}
+
+/* header */
+.header {
+    height: 94px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    box-shadow: 0 1px 4px #707070;
+    width: 100%;
+    background-color: #fff;
+
+    &-inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-left {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-logo-warp {
+        height: 47px;
+        width: 47px;
+        margin: 23px 16px 23px 23px;
+    }
+
+    &-title {
+        font-size: 24px;
+        margin: 31px 0;
+    }
+
+    &-center {
+        @include responsive(sm) {
+            display: none;
+        }
+    }
+
+    &-menu-box {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-menu-item {
+        margin: 36px 23px;
+    }
+
+    &-right {
+        @include responsive(sm) {
+            display: none;
+        }
+
+        .btn {
+            display: block;
+            background: linear-gradient(#FA41CC, #6020B0);
+            color: #fff;
+            border-radius: 10px;
+            width: 155px;
+            height: 37px;
+            text-align: center;
+            padding-top: 6px;
+            margin-top: 33px;
+        }
+    }
+}
+
+// ファーストビュー
+.fv-right-bg {
+    height: 708px;
+    width: 708px;
+    position: absolute;
+    background-image: url(../img/maru.png);
+    top: -100px;
+    right: -85px;
+    background-size: 708px;
+    z-index: 0;
+
+    @include responsive(sm) {
+        left: -25%;
+    }
+}
+
+.fv {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 165px 20px 155px;
+
+    @include responsive(sm) {
+        flex-direction: column;
+        padding: 80px 20px;
+    }
+
+    &-left {
+        width: 50%;
+
+        @include responsive(sm) {
+            width: fit-content;
+            margin: 0 auto;
+
+        }
+
+        h1 {
+            max-width: fit-content;
+            font-size: 32px;
+            line-height: 42px;
+            margin-bottom: 42px;
+
+            @include responsive(sm) {
+                width: fit-content;
+                margin: 0 auto;
+                margin-bottom: 50px;
+                text-align: center;
+            }
+        }
+
+        h2 {
+            font-size: 16px;
+            line-height: 24px;
+            font-size: 16px;
+            max-width: 255px;
+
+            @include responsive(sm) {
+                width: fit-content;
+                margin: 0 auto;
+                margin-bottom: 50px;
+                text-align: center;
+            }
+
+        }
+
+        .btn {
+            display: block;
+            background: linear-gradient(#FA41CC, #6020B0);
+            color: #fff;
+            border-radius: 10px;
+            width: 155px;
+            height: 37px;
+            text-align: center;
+            padding-top: 6px;
+            margin-top: 33px;
+
+            @include responsive(sm) {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    &-right {
+        width: 50%;
+        margin: 0 auto;
+
+        @include responsive(sm) {
+            width: 95%;
+        }
+    }
+
+    &-img-1 {
+        @include responsive(sm) {
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+}
+
+// サービス
+.service {
+    &-flex-box {
+        display: flex;
+        justify-content: space-between;
+
+        @include responsive(lg) {
+            justify-content: center;
+        }
+
+        @include responsive(sm) {
+            flex-direction: column;
+        }
+    }
+
+    &-item-right {
+        width: 50%;
+
+        @include responsive(sm) {
+            width: 95%;
+        }
+    }
+
+    &-item-left {
+        width: 40%;
+
+        @include responsive(sm) {
+            width: 95%;
+            margin: 0 auto;
+        }
+
+    }
+
+    &-flex-rev {
+        @include responsive(sm) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &-text-sp-mg {
+        margin-bottom: 30px;
+    }
+
+    &-item-box {
+        margin-bottom: 100px;
+    }
+
+    &-h3-1 {
+        padding-top: 50px;
+    }
+}
+
+// 価格
+.plice {
+    background-color: #EEFBFB;
+    padding: 57px 0 69px;
+
+    &-table {
+        background-color: #fff;
+        border-collapse: collapse;
+        box-shadow: 0 3px 6px #707070;
+        width: 100%;
+        margin-bottom: 60px;
+
+    }
+
+    .left-col {
+        padding: 37px 55px 37px 18px;
+        border-right: #E5E5E5 1px solid;
+        width: 350px;
+        font-size: 16px;
+        font-weight: bold;
+
+        @include responsive(lg) {
+            width: 288px;
+        }
+
+        @include responsive(sm) {
+            display: block;
+            width: 100%;
+            padding: 37px 0;
+            text-align: center;
+            border-bottom: #E5E5E5 1px solid;
+
+        }
+
+    }
+
+    .right-col {
+        max-width: 636px;
+        padding-left: 37px;
+        font-weight: bold;
+
+        @include responsive(sm) {
+            display: block;
+            width: 100%;
+            padding: 37px 0;
+            max-width: fit-content;
+            margin: 0 auto;
+        }
+    }
+
+    &-row {
+        border-bottom: #E5E5E5 1px solid;
+    }
+
+    &-text {
+        text-align: center;
+    }
+}
+
+// FAQ
+.FAQ {
+    padding: 57px 0 87px;
+
+    &-table {
+        border-collapse: collapse;
+        border: solid 1px #E5E5E5;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0 auto;
+        width: 1000px;
+
+        @include responsive(lg) {
+            width: 600px;
+        }
+
+        @include responsive(sm) {
+            width: 350px;
+        }
+
+    }
+
+    .Q-col {
+        padding: 20px 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        border-bottom: solid 1px #E5E5E5;
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+    }
+
+    .A-col {
+        display: block;
+        width: 100%;
+        border-bottom: solid 1px #E5E5E5;
+        background-color: #F2F2F2;
+        padding: 20px 30px;
+        display: none;
+    }
+
+    td.active {
+        display: block;
+        transition: .5s;
+    }
+
+}
+
+// ブログ
+.blog {
+    background-color: #EEFBFB;
+    padding: 49px 0 100px;
+
+    &-inner {
+        max-width: 1220px;
+        margin: 0 auto;
+    }
+
+    &-post-warp {
+        ul {
+            display: flex;
+            justify-content: space-between;
+
+            @include responsive(sm) {
+                flex-direction: column;
+            }
+
+            a {
+                display: block;
+                width: 30%;
+                background-color: #fff;
+                color: #333333;
+                position: relative;
+                box-shadow: 0 3px 6px #707070;
+
+
+                @include responsive(sm) {
+                    width: 95%;
+                    margin: 0 auto;
+                    margin-bottom: 30px;
+                }
+
+                time {
+                    display: block;
+                    text-align: right;
+                    font-size: 16px;
+                    font-weight: bold;
+                    position: absolute;
+                    right: 5px;
+                    bottom: 5px;
+
+                }
+
+                p {
+                    font-size: 18px;
+                    padding: 15px 10px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+// work
+
+.work {
+    margin: 57px auto 90px;
+
+    &-itembox {
+        img {
+            height: 211px;
+        }
+    }
+
+    &-item-box {
+        border: solid 1px #DDDDDD;
+        border-radius: 16px;
+
+        // height: 550px;
+        p {
+            padding: 20px 17px;
+            color: #333333;
+        }
+
+        .work-text {
+            font-size: 14px;
+        }
+
+    }
+}
+
+// コンタクト
+.contact {
+    background: linear-gradient(to right, #05A5FA, #63FBD7);
+    padding-top: 100px;
+    padding-bottom: 50px;
+
+    .section-title {
+        color: #fff;
+    }
+
+    .section-title-en {
+        color: #fff;
+    }
+
+    .section-title-ja {
+        color: #fff;
+
+    }
+}
+
+
+
+    // フッター
+    .footer {
+        margin-top: 50px;
+        margin-bottom: 54px;
+
+        &-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        &-txt-flex {
+            display: flex;
+            justify-content: center;
+            font-weight: bold;
+            margin: 24px auto 54px auto;
+        }
+
+        &-left {
+            margin-right: 34px;
+
+        }
+
+        &-right {
+            margin-left: 34px;
+        }
+
+        small {
+            display: block;
+            text-align: center;
+            font-size: 14px;
+        }
+
+    }

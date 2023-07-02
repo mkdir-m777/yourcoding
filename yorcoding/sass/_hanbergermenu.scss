@@ -1,0 +1,57 @@
+/* ハンバーガーメニュー */
+/* 3本線 クリック前*/
+
+.hanberger-menu {
+    position: relative;
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    top: 10px;
+    right: 0px;
+    z-index: 1;
+}
+
+.line1 {
+    background-color: #102a58;
+    width: 30px;
+    height: 4px;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    display: block;
+    transition: all .25s;
+}
+
+.line2 {
+    background-color: #102a58;
+    width: 30px;
+    height: 4px;
+    position: absolute;
+    top: 36px;
+    right: 30px;
+    display: block;
+    transition: all .25s;
+
+}
+
+.line3 {
+    background-color: #102a58;
+    width: 30px;
+    height: 4px;
+    position: absolute;
+    top: 47px;
+    right: 30px;
+    display: block;
+
+}
+
+/* 3本線クリック後 */
+.Line_1 {
+    transform: rotate(-45deg) translate(-8px, 13px);
+    transition: all .25s;
+}
+
+.Line_2 {
+    transform: rotate(45deg) translate(5px, 0px);
+    transition: all .25s;
+}
